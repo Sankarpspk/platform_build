@@ -2548,7 +2548,7 @@ ifeq ($(TARGET_SKIP_OTATOOLS_PACKAGE),true)
     build_otatools_package := false
 endif
 ifeq ($(TARGET_FORCE_OTA_PACKAGE),true)
-build_ota_package := true
+build_ota_package := false
 endif
 
 ifeq ($(build_otatools_package),true)
