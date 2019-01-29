@@ -29,7 +29,7 @@ Invoke ". build/envsetup.sh" from your shell to add the following functions to y
 
 EOF
 
-    __print_aosip_functions_help
+    __print_future_functions_help
 
 cat <<EOF
 
@@ -137,12 +137,12 @@ function check_product()
         echo "Couldn't locate the top of the tree.  Try setting TOP." >&2
         return
     fi
-    if (echo -n $1 | grep -q -e "^aosip_") ; then
-        AOSIP_BUILD=$(echo -n $1 | sed -e 's/^aosip_//g')
+    if (echo -n $1 | grep -q -e "^future_") ; then
+        FUTURE_BUILD=$(echo -n $1 | sed -e 's/^future_//g')
     else
-        AOSIP_BUILD=
+        FUTURE_BUILD=
     fi
-    export AOSIP_BUILD
+    export FUTURE_BUILD
 
         TARGET_PRODUCT=$1 \
         TARGET_BUILD_VARIANT= \

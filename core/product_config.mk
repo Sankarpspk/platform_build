@@ -175,9 +175,9 @@ include $(BUILD_SYSTEM)/node_fns.mk
 include $(BUILD_SYSTEM)/product.mk
 include $(BUILD_SYSTEM)/device.mk
 
-# A AOSiP build needs only the AOSiP product makefiles.
-ifneq ($(AOSIP_BUILD),)
-  all_product_configs := $(shell find device -path "*/$(AOSIP_BUILD)/aosip.mk")
+# A Future build needs only the Future product makefiles.
+ifneq ($(FUTURE_BUILD),)
+  all_product_configs := $(shell find device -path "*/$(FUTURE_BUILD)/future.mk")
 else
   ifneq ($(strip $(TARGET_BUILD_APPS)),)
   # An unbundled app build needs only the core product makefiles.
@@ -188,9 +188,9 @@ else
   # files in the tree.
   all_product_configs := $(get-all-product-makefiles)
   endif # TARGET_BUILD_APPS
-endif # AOSIP_BUILD
+endif # FUTURE_BUILD
 
-ifeq ($(AOSIP_BUILD),)
+ifeq ($(FUTURE_BUILD),)
 
 # Find the product config makefile for the current product.
 # all_product_configs consists items like:
